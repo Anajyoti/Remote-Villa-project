@@ -15,6 +15,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "cookie-parser": "^1.4.6"
+    "cookie-parser": "^1.4.6",
+    "sqlite3": "^5.1.7"
   }
 }
