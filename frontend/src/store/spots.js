@@ -83,7 +83,10 @@ export const getSpots = () => async (dispatch) => {
             return newState;
         }
         case LOAD_SPOT: {
-        return { ...state, singleSpot: action.spot };
+          return {
+            ...state,
+            allSpots: action.spots,
+          };
     }
     default:
         return state;
