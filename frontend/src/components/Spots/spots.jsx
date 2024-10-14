@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSpots } from '../../store/spots';
 import { useHistory } from 'react-router-dom';
 import './Spots.css'; // Import CSS for styling
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 const Spots = () => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -17,7 +18,7 @@ const Spots = () => {
   useEffect(() => {
     dispatch(getSpots())
       .then(() => setLoading(false)) // Set loading to false once data is fetched
-      .catch((err) => {
+      .catch(() => {
         setError('Failed to load spots. Please try again.');
         setLoading(false);
       });
