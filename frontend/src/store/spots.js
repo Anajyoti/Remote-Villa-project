@@ -17,7 +17,7 @@ const getAllSpots = (spots) => {
 };
 };
 
-const loadSpot = (spot) => {
+const loadSpotAction = (spot) => {
     return {
     type: LOAD_SPOT,
     payload: spot
@@ -49,20 +49,20 @@ const loadSpot = (spot) => {
 
 // Thunks
 // Fetch all spots
-export const getSpots = () => async (dispatch) => {
+export const getSpotsThunk = () => async (dispatch) => {
     const response = await csrfFetch('/api/spots');
     if (response.ok) {
-      const spots = await response.json();
-      dispatch(getAllSpots(spots));
+      const data = await response.json();
+      dispatch(getAllSpots(data.Spots));
     }
   };
   
   // Fetch a single spot (spotdetails) by ID
-  export const getSpotById = (spotId) => async (dispatch) => {
+  export const getSpotByIdThunk = (spotId) => async (dispatch) => {
     const response = await csrfFetch(`/api/spots/${spotId}`);
     if (response.ok) {
-      const spot = await response.json();
-      dispatch(loadSpot(spot));
+      const data = await response.json();
+      dispatch(loadSpotAction(data));
     }
   };
   // Initial State
@@ -77,7 +77,7 @@ export const getSpots = () => async (dispatch) => {
     switch (action.type) {
         case GET_SPOTS: {
             const newState = { ...state, allSpots: { ...state.allSpots } };
-            action.spots.forEach((spot) => {        //payload
+            action.payload.forEach((spot) => {        //payload
                 newState.allSpots[spot.id] = spot;
             });
             return newState;

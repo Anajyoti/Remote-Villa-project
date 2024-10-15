@@ -1,40 +1,45 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSpots } from '../../store/spots';
+import { getSpotsThunk } from '../../store/spots';
 import { useNavigate } from 'react-router-dom';
-import './Spots.css'; // Import CSS for styling
+import './spots.css'; // Import CSS for styling
 const Spots = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // Local state to handle loading or errors
+
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const spots = useSelector((state) => state.spots); // Accessing the state
-  const allSpots = useSelector((state) => state.spots?.allSpots || []);
-  
-  
+  const spots = useSelector((state) => state.spots.allSpots);
+
   useEffect(() => {
-    dispatch(getSpots())
-      .then(() => setIsLoading(false)) // Set loading to false once data is fetched
-      .catch(() => {
-        setError('Failed to load spots. Please try again.');
-        setIsLoading(false);
-      });
+    dispatch(getSpotsThunk())
+      .then(() => setIsLoading(false));
   }, [dispatch]);
+  // const [error, setError] = useState(null);
+  //const spots = useSelector((state) => state.spots); // Accessing the state
+  //const allSpots = useSelector((state) => state.spots?.allSpots || []);
+  // useEffect(() => {
+  //   dispatch(getSpots())
+      // .then(() => setIsLoading(false)) // Set loading to false once data is fetched
+      //  .catch(() => {
+      //   setError('Failed to load spots. Please try again.');
+      //   setIsLoading(false);
+      // });
+  // }, [dispatch]);
 
   const handleSpotClick = (spotId) => {
     navigate(`/spots/${spotId}`);
   };
 
   if (isLoading) return <div>Loading...</div>; // Show loading spinner or message
-  if (error) return <div>{error}</div>; // Show error message if fetching failed
+  // if (error) return <div>{error}</div>; // Show error message if fetching failed
 
-  if (!spots) return <div>No spots available</div>;
-
+  // if (!spots) return <div>No spots available</div>;
+  //console.log(">>>>>>",spots)
   return (
-    <div className="spots-container">
-       {allSpots.map((spot) => (
-        <div key={spot.id} className="spot-tile" onClick={() => handleSpotClick(spot.id)}>
+    <div className="spotList">
+    {Object.values(spots).map((spot) => (
+      <div key={spot.id} className="eachSpot" title={spot.name} onClick={()=>handleSpotClick(spot.id)}>
           {/* Thumbnail Image */}
           <img className="spot-thumbnail" src={spot.previewImage} alt={spot.name} />
 
