@@ -38,16 +38,24 @@
     object-fit: cover;
     border-radius: 4px;
 }
-
+.spot-details{
+    display: flex;
+    justify-content: space-between;
+}
 .spot-info {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    align-items: center;
+    /* grid-template-columns: 2fr 1fr; */
+    grid-template-columns: 1fr;
+    align-items: start; 
     gap: 16px;
+    padding: 20px; /* Adding padding to make it feel spacious */
+    background-color: #f9f9f9; /* Light background for separation */
+    border-radius: 8px; /* Rounded corners for aesthetics */
 }
 
 .spot-info h1 {
     font-size: 2rem;
+    font-weight: bold;
 }
 
 .spot-info p {
@@ -172,29 +180,41 @@
     flex: 2;
 }
 
-.calloutBox {
+/* .calloutBox {
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
+} */
+.calloutBox {
+    width: 100%; /* Make it take up the full width */
+    max-width: 300px; /* Set a maximum width to prevent it from getting too large */
+    margin: 0 auto; /* Center it horizontally */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff; /* Make it stand out */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a light shadow for depth */
 }
-
 .calloutBox p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 10px;
 }
 
 .calloutBox button {
-    padding: 10px 20px;
-    font-size: 1rem;
+    /* padding: 10px 20px;
+    font-size: 1rem; */
+    padding: 12px 24px; /* Bigger button for clearer CTA */
+    font-size: 1.2rem; /* Slightly larger text for visibility */
     color: white;
-    background-color: #007bff;
+    background-color: #f8185b;
     border: none;
     border-radius: 4px;
 }
 
 .calloutBox button:hover {
-    background-color: #0056b3;
+    background-color: #fc0c4c;
 }
 
 .reviewAndCount {

@@ -40,7 +40,7 @@
 
 /* Create New Spot button */
 .createNewSpotText {
-  color: seagreen;
+  color: rgb(255, 97, 97);
   font-weight: bold;
 }
 
@@ -82,6 +82,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  width: 100%;
 }
 
 .profile-button:hover {
@@ -128,7 +129,7 @@ nav ul li a:hover {
   color: lightcoral;
 }
 
-/* Create Spot Button */
+/*Create Spot Button */
 .create-spot-button {
   background-color: #FF5A5F;
   color: white;
@@ -142,7 +143,7 @@ nav ul li a:hover {
 
 .create-spot-button:hover {
   background-color: #ff787d;
-}
+} 
 
 /* Header right - profile button area */
 .header-right {

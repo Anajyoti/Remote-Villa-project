@@ -72,7 +72,7 @@ export function LoadSpot() {
                </div>
            </div> */}
 
-
+       <div className="spot-details"> 
            {/* Spot details */}
            <div className="spot-info">
                <h1>{spot.name}</h1>
@@ -88,12 +88,13 @@ export function LoadSpot() {
            </div>
 
 
-           {/* About section */}
+           {/* About section
            <div className="about-section">
                <h2>About the place</h2>
                <p>{spot.about}</p>
            </div>
-
+        </div>
+            */}
 
            {/* Review and Count Section */}
            <div className="calloutBox" data-testid='spot-callout-box'>
@@ -107,12 +108,14 @@ export function LoadSpot() {
                <p data-testid='spot-price'>${spot.price} / night</p>
                <button data-testid='reserve-button' onClick={() => alert("Feature coming soon")}>Reserve</button>
            </div>
+        </div> 
 
 
            {/* Review Area
            <div className="reviews">
                <Reviews spotId={spot.id} />
            </div> */}
+
 
 <Reviews 
         spotId={spot.id} 

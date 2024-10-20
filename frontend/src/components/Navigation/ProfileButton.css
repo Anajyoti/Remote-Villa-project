@@ -134,11 +134,13 @@
   cursor: pointer;
 }
 
-button {
+.button {
+  width: auto;
+  padding: 8px;
   background-color: transparent;
   border: none;
   cursor: pointer;
-}
+} 
 
 .profile-dropdown {
   position: absolute;
@@ -220,9 +222,13 @@ button {
 }
 
 /* Style for the dropdown arrow icon */
-button .fa-user-circle {
-  font-size: 25px;
-  color: #333;
-  margin-left: 8px;
-}
+
+  button .fa-user-circle {
+    font-size: 40px; /* Adjust font-size to a more reasonable value */
+    color: #333;
+    margin-left: 8px; /* Adjust as needed */
+    width: auto; /* Remove the fixed width for better scaling */
+    height: auto;
+  }
+
 
