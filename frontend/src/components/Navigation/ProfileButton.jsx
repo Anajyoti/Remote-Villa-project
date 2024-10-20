@@ -67,7 +67,7 @@ function ProfileButton({ user }) {
         {user ? (
           <>
             <li>
-              <span>Hello, {user.firstName} {user.lastName}</span>
+              <span>Hello,{user.firstName} {user.lastName}</span>
             </li>
             <li>{user.email}</li>
             <li>

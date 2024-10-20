@@ -16,6 +16,19 @@ function LoginFormModal() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors({});
+  //   try {
+  //     const response = await dispatch(sessionActions.login({ credential, password }));
+  //     if (response.ok) {
+  //       closeModal();
+  //     }
+  //   } catch (res) {
+  //     const data = await res.json();
+  //     if (data && data.message) {
+  //       setErrors(data.message);
+  //     }
+  //   }
+  // };
+
     return dispatch(sessionActions.login({ credential, password }))
       .then(closeModal)
       .catch(async (res) => {
@@ -25,11 +38,21 @@ function LoginFormModal() {
         }
       });
   };
+  const loginDemo = async (e) => {
+    e.preventDefault();
+      await dispatch(sessionActions.login({
+        "credential": "Demo-lition",
+        "password": "password"
+      }));
+      closeModal();
+    }
+  const disableLoginButton = credential.length < 4 || password.length < 6;
+
 
   return (
-    <>
+    <div className="login-modal">
       <h1>Log In</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="login-form">
         <label>
           Username or Email
           <input
@@ -49,11 +72,24 @@ function LoginFormModal() {
           />
         </label>
         {errors.credential && (
-          <p>{errors.credential}</p>
+          <p className="error">{errors.credential}</p>
         )}
-        <button type="submit">Log In</button>
+        <button 
+          type="submit" 
+          className="login-btn" 
+          disabled={disableLoginButton}
+        >
+          Log In
+        </button>
       </form>
-    </>
+
+      <button 
+        onClick={loginDemo} 
+        className="demo-btn"
+      >
+        Demo User
+      </button>
+    </div>
   );
 }
 
