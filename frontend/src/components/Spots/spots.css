@@ -1,82 +1,80 @@
-/* Spots.css */
 /* Main container for the list of spots */
 .spotList {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 spots per row */
-    gap: 30px; /* Spacing between spots */
-    justify-items: center;
-    width: 75%;
-    margin-top: 2rem;
-    box-sizing: border-box;
-  }
-  
-  /* Individual spot container */
-  .eachSpot {
-    cursor: pointer;
-    width: 305px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid #ddd; /* Light border around the spot */
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-    transition: transform 0.2s ease; /* Add a hover animation */
-  }
-  
-  .eachSpot:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-  }
-  
-  /* Thumbnail image for each spot */
-  .spot-thumbnail {
-    width: 100%;
-    height: 200px; /* Fixed height for image */
-    object-fit: cover; /* Maintain aspect ratio and crop image */
-    border-bottom: 1px solid #ddd;
-  }
-  
-  /* Spot info section */
-  .spot-info {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-  }
-  
-  /* Location styling (city, state) */
-  .spot-location {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 5px;
-  }
-  
-  /* Name of the spot */
-  .spot-name {
-    font-weight: bold;
-    font-size: 1.4rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  /* Star rating for the spot */
-  .spot-rating {
-    font-size: 1.2rem;
-    color: #f4b400; /* Gold star color */
-    margin-bottom: 10px;
-  }
-  
-  /* Price per night */
-  .spot-price {
-    font-size: 1.2rem;
-    color: #333;
-  }
-  
-  .night-label {
-    font-size: 1rem;
-    color: #888; /* Lighter color for "night" */
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 spots per row */
+  gap: 30px; /* Spacing between spots */
+  justify-items: center;
+  width: 75%;
+  margin-top: 2rem;
+  box-sizing: border-box;
+}
+
+/* Individual spot container */
+.eachSpot {
+  cursor: pointer;
+  width: 305px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ddd; /* Light border around the spot */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  transition: transform 0.2s ease; /* Add a hover animation */
+}
+
+.eachSpot:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Thumbnail image for each spot */
+.spot-thumbnail {
+  width: 100%;
+  height: 200px; /* Fixed height for image */
+  object-fit: cover; /* Maintain aspect ratio and crop image */
+  border-bottom: 1px solid #ddd;
+}
+
+/* Spot info section */
+.spot-info {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+/* Location styling (city, state) */
+.spot-location {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Name of the spot */
+.spot-name {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Star rating for the spot */
+.spot-rating {
+  font-size: 1.2rem;
+  color: #f4b400; /* Gold star color */
+  margin-bottom: 10px;
+}
+
+/* Price per night */
+.spot-price {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.night-label {
+  font-size: 1rem;
+  color: #888; /* Lighter color for "night" */
+}

@@ -1,33 +1,153 @@
 /* Navigation.css */
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-between; /* Space items evenly */
-    background-color: #36061a; /* Navbar background color */
-    padding: 10px 20px; /* Padding for the navbar */
-  }
-  
-  li {
-    margin: 0 15px; /* Space between list items */
-  }
-  
-  a, button {
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* Link text color */
-    font-weight: bold; /* Make text bold */
-    padding: 8px 12px; /* Padding for clickable areas */
-    border: none; /* Remove default button border */
-    background: none; /* Remove button background */
-    cursor: pointer; /* Change cursor to pointer */
-    transition: background-color 0.3s; /* Smooth background color change */
-  }
-  
-  a:hover, button:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Lighten background on hover */
-    border-radius: 4px; /* Rounded corners */
-  }
-  .hidden {
-    display: none;
-  }
+
+/* Styling for the overall navigation bar */
+/* Profile Dropdown */
+/* Hidden class for elements that should not be displayed */
+.hidden {
+  display: none;
+}
+
+/* Dropdown menu hover effect */
+.dropdown-menu:hover {
+  cursor: pointer;
+  background-color: lightcoral;
+}
+
+/* Airbnb logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  margin-left: 8px;
+  font-weight: bold;
+  color: lightcoral;
+}
+
+/* Navigation bar styling */
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+/* Create New Spot button */
+.createNewSpotText {
+  color: seagreen;
+  font-weight: bold;
+}
+
+.createNewSpotText:hover {
+  cursor: pointer;
+}
+
+/* Error message styling */
+.errorMessage {
+  color: lightcoral;
+}
+
+/* Profile dropdown styling */
+.profile-dropdown {
+  position: fixed;
+  background-color: whitesmoke;
+  padding: 10px;
+  right: 20px;
+  top: 70px;
+  border: 1px solid black;
+} 
+
+/* Upper right menu styling */
+.upperRightMenu {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Profile button styling */
+.profile-button {
+  border: 2px solid black;
+  border-radius: 25%;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.profile-button:hover {
+  border-color: lightcoral;
+  color: lightcoral;
+}
+
+/* Airbnb icon with text */
+.airbnb-icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.airbnb-home-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: lightcoral;
+  text-decoration: none;
+  padding-left: 8px;
+}
+
+/* Navigation links styling */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav ul li a:hover {
+  color: lightcoral;
+}
+
+/* Create Spot Button */
+.create-spot-button {
+  background-color: #FF5A5F;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.create-spot-button:hover {
+  background-color: #ff787d;
+}
+
+/* Header right - profile button area */
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+}

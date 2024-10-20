@@ -6,6 +6,10 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
 import * as sessionActions from './store/session';
 import Spots from './components/Spots/spots';
+import LoadSpot from './components/Spots/LoadSpot';
+import CreateSpot from './components/Spots/CreateSpot';
+import ManageSpots from './components/Spots/ManageSpots';
+import UpdateSpot from './components/Spots/UpdateSpot';
 function Layout() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -40,6 +44,22 @@ const router = createBrowserRouter([
         path: '/spots',
         element: <Spots/>
       },
+      {
+        path: '/spots/:spotId',
+        element: <LoadSpot/>
+      },
+      {
+        path: '/spots/new',
+        element: <CreateSpot/>
+      },
+      {
+        path:'/spots/current',
+        element:<ManageSpots/>
+      },
+      {
+        path:'/spots/:spotId/edit',
+        element:<UpdateSpot/>
+      }
     ]
   }
 ]);

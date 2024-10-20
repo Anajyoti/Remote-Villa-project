@@ -1,2 +1,3 @@
-export default './spots';
+export default './Spots';
+
 import './spots.css';
