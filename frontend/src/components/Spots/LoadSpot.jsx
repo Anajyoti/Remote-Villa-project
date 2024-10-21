@@ -76,6 +76,7 @@ export function LoadSpot() {
            {/* Spot details */}
            <div className="spot-info">
                <h1>{spot.name}</h1>
+               <h2>Hosted by {spot?.Owner?.firstName} {spot?.Owner?.lastName}</h2>
                <p>{spot.city}, {spot.state}</p>
                <p>{spot.description}</p>
 

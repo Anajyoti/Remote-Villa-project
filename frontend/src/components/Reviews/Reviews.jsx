@@ -127,6 +127,7 @@ export function Reviews({ spotId ,  RefechReviewChange}) {
   // const canPostReview = sessionUser && !allReviews.find(review => review.userId === sessionUser.id);
 // const canPostReview = true
 // const averageRating = 1
+const sortedReviews = Object.values(reviews).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   return (
     <div className="reviews-section">
       {/* <h2>★ {averageRating} · {allReviews.length} {allReviews.length === 1 ? 'review' : 'reviews'}</h2> */}
@@ -180,8 +181,20 @@ export function Reviews({ spotId ,  RefechReviewChange}) {
           <button onClick={handleCloseModal}>Cancel</button>
         </div>
       )}
-         
-      {allReviews.map((review) => (
+          {sortedReviews.map((review) => (
+      <div key={review.id} className="review">
+        <h3>{review.User.firstName}</h3>
+        <p>{new Date(review.createdAt).toLocaleString('default', { month: 'long', year: 'numeric' })}</p>
+        <p>{review.review}</p>
+
+        {sessionUser && sessionUser.id === review.userId && (
+          <button onClick={() => handleDeleteClick(review.id)}>
+            Delete
+          </button>
+        )}
+      </div>
+    ))}
+      {/* {allReviews.map((review) => (
         <div key={review.id} className="review">
           <h3>{review.User.firstName}</h3>
           <p>{new Date(review.createdAt).toLocaleString('default', { month: 'long', year: 'numeric' })}</p>
@@ -192,7 +205,7 @@ export function Reviews({ spotId ,  RefechReviewChange}) {
           )}
 
         </div>
-      ))}
+      ))} */}
 
 
          {showDeleteModal && (

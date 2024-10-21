@@ -59,13 +59,22 @@
   font-size: 1.4rem;
   color: #333;
   margin-bottom: 10px;
+  white-space: nowrap; /* Prevent name from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis for long names */
 }
 
 /* Star rating for the spot */
 .spot-rating {
   font-size: 1.2rem;
   color: #f4b400; /* Gold star color */
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
+}
+
+.spot-rating svg {
+  margin-right: 5px; /* Space between star icon and rating */
 }
 
 /* Price per night */
